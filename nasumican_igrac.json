@@ -1,0 +1,12 @@
+{
+  "idIgrac": 2,
+  "ime": "Andreja",
+  "prezime": "Mitrović",
+  "telefon": "061-2747-637",
+  "pozicija": "Vezni",
+  "mesto": {
+    "idMesta": 2,
+    "naziv": "Novi Sad",
+    "postanskiBroj": "21000"
+  }
+}

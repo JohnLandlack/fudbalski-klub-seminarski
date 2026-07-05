@@ -1,0 +1,12 @@
+{
+  "idIgrac": 1,
+  "ime": "Dusan",
+  "prezime": "Vlahovic",
+  "telefon": "064111222",
+  "pozicija": "Napadac",
+  "mesto": {
+    "idMesta": 1,
+    "naziv": "Beograd",
+    "postanskiBroj": "11000"
+  }
+}
