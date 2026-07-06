@@ -28,6 +28,24 @@ class MestoTest {
         assertEquals("Beograd", mesto.getNaziv());
         assertEquals("11000", mesto.getPostanskiBroj());
     }
+    
+    @Test
+    void setIdMesta_postavljaVrednost() {
+        mesto.setIdMesta(5);
+        assertEquals(5, mesto.getIdMesta());
+    }
+    
+    @Test
+    void setNaziv_postavljaVrednost() {
+        mesto.setNaziv("Kikinda");
+        assertEquals("Kikinda", mesto.getNaziv());
+    }
+    
+    @Test
+    void setPostanskiBroj_postavljaVrednost() {
+        mesto.setPostanskiBroj("23300");
+        assertEquals("23300", mesto.getPostanskiBroj());
+    }
 
     @Test
     void setIdMesta_bacaException_kadaJeNulaIliManje() {
@@ -46,11 +64,24 @@ class MestoTest {
         assertThrows(NullPointerException.class, () -> mesto.setPostanskiBroj(null));
         assertThrows(IllegalArgumentException.class, () -> mesto.setPostanskiBroj("   "));
     }
+    
+    @Test
+    void equals_vracaTrue_zaIstiObjekat(){
+        assertTrue(mesto.equals(mesto));
+    }
+    
+    void equals_vracaTrue_akoJeNull(){
+        assertFalse(mesto.equals(null));
+    }
+    
+    void equals_vracaTrue_akoJeDrugaKlasa(){
+        assertFalse(mesto.equals(new Object()));
+    }
 
     @ParameterizedTest
     @CsvSource({
         "1, Beograd, 11000, true",
-        "2, Novi Sad, 21000, false"
+        "2, Kikinda, 23300, false"
     })
     void equals_porediPoIdu(int id, String naziv, String postanskiBroj, boolean ocekivano) {
         Mesto drugoMesto = new Mesto(id, naziv, postanskiBroj);
