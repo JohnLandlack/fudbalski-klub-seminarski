@@ -127,6 +127,12 @@ public class Trener {
         if (sifra.isBlank()) throw new IllegalArgumentException("Sifra ne sme biti prazna");
         this.sifra = sifra;
     }
+    
+    /**
+     * Poredi dva objekta po ID-ju trenera.
+     * * @param obj objekat sa kojim se poredi
+     * @return true ako su oba objekta iste klase i imaju isti ID trenera, inace false
+     */
 
     @Override
     public boolean equals(Object obj) {

@@ -81,6 +81,12 @@ public class Mesto {
         if (postanskiBroj.isBlank()) throw new IllegalArgumentException("Postanski broj ne sme biti prazan");
         this.postanskiBroj = postanskiBroj;
     }
+    
+    /**
+     * Poredi dva objekta po ID-ju mesta.
+     * * @param obj objekat sa kojim se poredi
+     * @return true ako su oba objekta iste klase i imaju isti ID mesta, inace false
+     */
 
     @Override
     public boolean equals(Object obj) {

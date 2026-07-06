@@ -81,6 +81,12 @@ public class Licenca {
         if (nivoLicence.isBlank()) throw new IllegalArgumentException("Nivo ne sme biti prazan");
         this.nivoLicence = nivoLicence;
     }
+    
+    /**
+     * Poredi dva objekta po ID-ju licence.
+     * * @param obj objekat sa kojim se poredi
+     * @return true ako su oba objekta iste klase i imaju isti ID licence, inace false
+     */
 
     @Override
     public boolean equals(Object obj) {

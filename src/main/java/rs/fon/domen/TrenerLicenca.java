@@ -103,6 +103,12 @@ public class TrenerLicenca {
         }
         this.datumIsteka = datumIsteka;
     }
+    
+    /**
+     * Poredi dva objekta po treneru i licenci.
+     * * @param obj objekat sa kojim se poredi
+     * @return true ako su oba objekta iste klase i imaju istog trenera i licencu, inace false
+     */
 
     @Override
     public boolean equals(Object obj) {

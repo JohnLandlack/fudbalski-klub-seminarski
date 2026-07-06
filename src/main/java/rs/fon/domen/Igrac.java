@@ -148,6 +148,12 @@ public class Igrac {
         Objects.requireNonNull(mesto, "Mesto ne sme biti null");
         this.mesto = mesto;
     }
+    
+    /**
+     * Poredi dva objekta po ID-ju igraca.
+     * * @param obj objekat sa kojim se poredi
+     * @return true ako su oba objekta iste klase i imaju isti ID igraca, inace false
+     */
 
     @Override
     public boolean equals(Object obj) {
