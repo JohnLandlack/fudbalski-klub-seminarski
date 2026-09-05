@@ -33,13 +33,13 @@ class IgracTest {
         assertEquals("Napadac", igrac.getPozicija());
         assertEquals(mesto, igrac.getMesto());
     }
-    
+
     @Test
     void setIdIgrac_postavljaVrednost() {
         igrac.setIdIgrac(5);
         assertEquals(5, igrac.getIdIgrac());
     }
-    
+
     @Test
     void setIme_postavljaVrednost() {
         igrac.setIme("Dušan");
@@ -78,15 +78,19 @@ class IgracTest {
 
     @Test
     void setIme_bacaException_kadaJeNullIliPrazno() {
-        assertThrows(NullPointerException.class, () -> igrac.setIme(null));
         assertThrows(IllegalArgumentException.class, () -> igrac.setIme(""));
+    }
+
+    @Test
+    void setIme_bacaException_kadaJeNull() {
+        assertThrows(NullPointerException.class, () -> igrac.setIme(null));
     }
 
     @Test
     void setMesto_bacaException_kadaJeNull() {
         assertThrows(NullPointerException.class, () -> igrac.setMesto(null));
     }
-    
+
     @Test
     void equals_vracaTrue_zaIstiObjekat() {
         assertTrue(igrac.equals(igrac));
@@ -101,7 +105,7 @@ class IgracTest {
     void equals_vracaFalse_akoJeDrugaKlasa() {
         assertFalse(igrac.equals(new Object()));
     }
-    
+
     @ParameterizedTest
     @CsvSource({
         "1, Aleksandar, Mitrovic, Napadac, true",
