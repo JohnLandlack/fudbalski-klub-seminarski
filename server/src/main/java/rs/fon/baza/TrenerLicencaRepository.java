@@ -33,6 +33,24 @@ public class TrenerLicencaRepository extends Repository<TrenerLicenca> {
         }
     }
 
+    /**
+     * Vraća vezu trenera i licence po kompozitnom ključu.
+     * @param idTrener identifikator trenera
+     * @param idLicence identifikator licence
+     * @return pronađena veza, ili null ako ne postoji
+     * @throws SQLException ako upit ka bazi ne uspe
+     */
+    public TrenerLicenca getById(int idTrener, int idLicence) throws SQLException {
+        String upit = UPIT_SA_JOINOVIMA + " WHERE tl.idTrener = ? AND tl.idLicence = ?";
+        try (PreparedStatement ps = getConnection().prepareStatement(upit)) {
+            ps.setInt(1, idTrener);
+            ps.setInt(2, idLicence);
+            try (ResultSet rs = ps.executeQuery()) {
+                return rs.next() ? mapRed(rs) : null;
+            }
+        }
+    }
+
     @Override
     public void add(TrenerLicenca trenerLicenca) throws SQLException {
         String upit = "INSERT INTO trener_licenca (idTrener, idLicence, datumIzdavanja, datumIsteka) VALUES (?, ?, ?, ?)";
