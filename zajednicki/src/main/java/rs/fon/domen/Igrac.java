@@ -1,12 +1,13 @@
 package rs.fon.domen;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
  * Predstavlja igrača u fudbalskom klubu.
  * * @author Jovan Radojičić
  */
-public class Igrac {
+public class Igrac implements Serializable {
     
     /** Jedinstveni identifikator igrača. */
     private int idIgrac;

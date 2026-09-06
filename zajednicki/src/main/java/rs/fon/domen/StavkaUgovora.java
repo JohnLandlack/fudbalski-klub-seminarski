@@ -1,5 +1,6 @@
 package rs.fon.domen;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.Objects;
 
@@ -8,7 +9,7 @@ import java.util.Objects;
  * Jedinstveno je određena ugovorom kome pripada i rednim brojem u okviru njega.
  * * @author Jovan Radojičić
  */
-public class StavkaUgovora {
+public class StavkaUgovora implements Serializable {
 
     /** Ugovor kome stavka pripada. */
     private Ugovor ugovor;

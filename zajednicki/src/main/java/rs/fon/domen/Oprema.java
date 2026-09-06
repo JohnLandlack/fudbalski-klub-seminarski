@@ -1,12 +1,13 @@
 package rs.fon.domen;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
  * Predstavlja opremu (dres) u fudbalskom klubu.
  * * @author Jovan Radojičić
  */
-public class Oprema {
+public class Oprema implements Serializable {
 
     /** Jedinstveni identifikator opreme. */
     private int idOpreme;

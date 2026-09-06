@@ -1,12 +1,13 @@
 package rs.fon.domen;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
  * Predstavlja mesto u fudbalskom klubu.
  * * @author Jovan Radojičić
  */
-public class Mesto {
+public class Mesto implements Serializable {
     
     /** Jedinstveni identifikator mesta. */
     private int idMesta;

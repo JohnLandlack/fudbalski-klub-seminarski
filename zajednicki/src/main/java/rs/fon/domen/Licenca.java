@@ -1,12 +1,13 @@
 package rs.fon.domen;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
  * Predstavlja licencu u fudbalskom klubu.
  * * @author Jovan Radojičić
  */
-public class Licenca {
+public class Licenca implements Serializable {
     
     /** Jedinstveni identifikator licence. */
     private int idLicence;

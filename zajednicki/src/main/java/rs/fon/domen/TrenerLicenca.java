@@ -1,5 +1,6 @@
 package rs.fon.domen;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.Objects;
 
@@ -7,7 +8,7 @@ import java.util.Objects;
  * Predstavlja asocijativnu klasu između trenera i licence.
  * * @author Jovan Radojičić
  */
-public class TrenerLicenca {
+public class TrenerLicenca implements Serializable {
     
     /** Trener koji poseduje licencu. */
     private Trener trener;

@@ -1,5 +1,6 @@
 package rs.fon.domen;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -9,7 +10,7 @@ import java.util.Objects;
  * Predstavlja ugovor koji fudbalski klub sklapa sa trenerom i igračem.
  * * @author Jovan Radojičić
  */
-public class Ugovor {
+public class Ugovor implements Serializable {
 
     /** Jedinstveni identifikator ugovora. */
     private int idUgovor;
