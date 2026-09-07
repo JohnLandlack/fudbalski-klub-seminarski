@@ -6,7 +6,8 @@ import java.util.Objects;
 
 /**
  * Predstavlja asocijativnu klasu između trenera i licence.
- * * @author Jovan Radojičić
+ *
+ * @author Jovan Radojičić
  */
 public class TrenerLicenca implements Serializable {
     
@@ -107,7 +108,8 @@ public class TrenerLicenca implements Serializable {
     
     /**
      * Poredi dva objekta po treneru i licenci.
-     * * @param obj objekat sa kojim se poredi
+     *
+     * @param obj objekat sa kojim se poredi
      * @return true ako su oba objekta iste klase i imaju istog trenera i licencu, inace false
      */
 

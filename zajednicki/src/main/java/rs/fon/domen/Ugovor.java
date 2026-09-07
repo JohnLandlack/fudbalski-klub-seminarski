@@ -8,7 +8,8 @@ import java.util.Objects;
 
 /**
  * Predstavlja ugovor koji fudbalski klub sklapa sa trenerom i igračem.
- * * @author Jovan Radojičić
+ *
+ * @author Jovan Radojičić
  */
 public class Ugovor implements Serializable {
 
@@ -125,7 +126,8 @@ public class Ugovor implements Serializable {
 
     /**
      * Poredi dva objekta po ID-ju ugovora.
-     * * @param obj objekat sa kojim se poredi
+     *
+     * @param obj objekat sa kojim se poredi
      * @return true ako su oba objekta iste klase i imaju isti ID ugovora, inace false
      */
 

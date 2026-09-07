@@ -11,7 +11,8 @@ import rs.fon.domen.Ugovor;
 /**
  * Sistemska operacija za dodavanje novog ugovora, zajedno sa njegovim
  * stavkama (ako ih ugovor već ima postavljene).
- * * @author Jovan Radojičić
+ *
+ * @author Jovan Radojičić
  */
 public class DodajUgovorSO extends OpstaSO<Ugovor, Ugovor> {
 

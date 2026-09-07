@@ -8,7 +8,8 @@ import rs.fon.domen.Licenca;
 
 /**
  * Repozitorijum za rad sa tabelom {@code licenca}.
- * * @author Jovan Radojičić
+ *
+ * @author Jovan Radojičić
  */
 public class LicencaRepository extends Repository<Licenca> {
 

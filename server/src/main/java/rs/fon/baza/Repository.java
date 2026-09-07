@@ -11,7 +11,8 @@ import java.util.List;
  * repozitorijumi implementiraju CRUD operacije preko {@link java.sql.PreparedStatement}
  * (parametrizovani upiti — bez konkatenacije korisničkih vrednosti u SQL) i
  * mapiranje reda rezultata u domenski objekat.
- * * @param <T> tip domenskog objekta kojim repozitorijum upravlja
+ *
+ * @param <T> tip domenskog objekta kojim repozitorijum upravlja
  * @author Jovan Radojičić
  */
 public abstract class Repository<T> {

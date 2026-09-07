@@ -8,7 +8,8 @@ import rs.fon.domen.Trener;
 
 /**
  * Repozitorijum za rad sa tabelom {@code trener}.
- * * @author Jovan Radojičić
+ *
+ * @author Jovan Radojičić
  */
 public class TrenerRepository extends Repository<Trener> {
 

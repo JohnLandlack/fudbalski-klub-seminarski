@@ -13,7 +13,8 @@ import rs.fon.baza.Konfiguracija;
  * test bazu, a posle vraća na produkcionu. Svaki pojedinačni test radi u
  * sopstvenoj transakciji koja se na kraju uvek poništava (rollback), tako da
  * test baza ostaje čista bez ručnog brisanja podataka.
- * * @author Jovan Radojičić
+ *
+ * @author Jovan Radojičić
  */
 public abstract class BazaTestBase {
 

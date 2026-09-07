@@ -5,7 +5,8 @@ import java.util.Objects;
 
 /**
  * Predstavlja licencu u fudbalskom klubu.
- * * @author Jovan Radojičić
+ *
+ * @author Jovan Radojičić
  */
 public class Licenca implements Serializable {
     
@@ -85,7 +86,8 @@ public class Licenca implements Serializable {
     
     /**
      * Poredi dva objekta po ID-ju licence.
-     * * @param obj objekat sa kojim se poredi
+     *
+     * @param obj objekat sa kojim se poredi
      * @return true ako su oba objekta iste klase i imaju isti ID licence, inace false
      */
 

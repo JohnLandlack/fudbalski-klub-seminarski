@@ -15,7 +15,8 @@ import rs.fon.domen.Ugovor;
  * {@code trener}, {@code igrac} i {@code mesto} da bi svaki ugovor imao
  * potpuno učitane objekate trenera i igrača. Stavke ugovora se ne učitavaju
  * ovde (prazna lista) — za njih se koristi {@link StavkaUgovoraRepository}.
- * * @author Jovan Radojičić
+ *
+ * @author Jovan Radojičić
  */
 public class UgovorRepository extends Repository<Ugovor> {
 

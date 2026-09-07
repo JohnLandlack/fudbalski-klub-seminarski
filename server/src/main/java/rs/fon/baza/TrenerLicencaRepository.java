@@ -13,7 +13,8 @@ import rs.fon.domen.TrenerLicenca;
  * Repozitorijum za rad sa tabelom {@code trener_licenca} (kompozitni ključ:
  * trener + licenca). Pridružuje tabele {@code trener} i {@code licenca} da bi
  * svaki zapis imao potpuno učitane objekte.
- * * @author Jovan Radojičić
+ *
+ * @author Jovan Radojičić
  */
 public class TrenerLicencaRepository extends Repository<TrenerLicenca> {
 

@@ -3,7 +3,8 @@ package rs.fon.baza;
 /**
  * Drži parametre konekcije ka bazi podataka. Podrazumevano pokazuje na
  * produkcionu bazu; URL se može promeniti (npr. u testovima, na test bazu).
- * * @author Jovan Radojičić
+ *
+ * @author Jovan Radojičić
  */
 public class Konfiguracija {
 

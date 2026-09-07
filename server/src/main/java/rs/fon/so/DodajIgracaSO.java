@@ -7,7 +7,8 @@ import rs.fon.domen.Igrac;
 
 /**
  * Sistemska operacija za dodavanje novog igrača.
- * * @author Jovan Radojičić
+ *
+ * @author Jovan Radojičić
  */
 public class DodajIgracaSO extends OpstaSO<Igrac, Igrac> {
 

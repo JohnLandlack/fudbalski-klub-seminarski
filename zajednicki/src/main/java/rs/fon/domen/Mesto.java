@@ -5,7 +5,8 @@ import java.util.Objects;
 
 /**
  * Predstavlja mesto u fudbalskom klubu.
- * * @author Jovan Radojičić
+ *
+ * @author Jovan Radojičić
  */
 public class Mesto implements Serializable {
     
@@ -85,7 +86,8 @@ public class Mesto implements Serializable {
     
     /**
      * Poredi dva objekta po ID-ju mesta.
-     * * @param obj objekat sa kojim se poredi
+     *
+     * @param obj objekat sa kojim se poredi
      * @return true ako su oba objekta iste klase i imaju isti ID mesta, inace false
      */
 

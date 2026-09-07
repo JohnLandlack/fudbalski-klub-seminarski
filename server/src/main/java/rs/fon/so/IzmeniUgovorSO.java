@@ -13,7 +13,8 @@ import rs.fon.domen.Ugovor;
  * Sistemska operacija za izmenu postojećeg ugovora. Sinhronizuje stavke
  * ugovora sa bazom: nove stavke dodaje, izmenjene ažurira, a stavke koje više
  * ne postoje u ugovoru briše.
- * * @author Jovan Radojičić
+ *
+ * @author Jovan Radojičić
  */
 public class IzmeniUgovorSO extends OpstaSO<Ugovor, Ugovor> {
 

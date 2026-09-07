@@ -6,7 +6,8 @@ import rs.fon.domen.Licenca;
 
 /**
  * Sistemska operacija za dodavanje nove licence.
- * * @author Jovan Radojičić
+ *
+ * @author Jovan Radojičić
  */
 public class DodajLicencuSO extends OpstaSO<Licenca, Licenca> {
 

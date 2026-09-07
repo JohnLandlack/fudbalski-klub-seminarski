@@ -15,7 +15,8 @@ import rs.fon.domen.Ugovor;
  * imala potpuno učitan objekat opreme. Ugovor kome stavka pripada se ovde
  * učitava samo sa postavljenim ID-jem (bez trenera/igrača) — za pun objekat
  * ugovora koristiti {@link UgovorRepository#getById(int)}.
- * * @author Jovan Radojičić
+ *
+ * @author Jovan Radojičić
  */
 public class StavkaUgovoraRepository extends Repository<StavkaUgovora> {
 

@@ -6,7 +6,8 @@ import rs.fon.domen.Igrac;
 
 /**
  * Sistemska operacija za preuzimanje svih igrača.
- * * @author Jovan Radojičić
+ *
+ * @author Jovan Radojičić
  */
 public class PreuzmiSveIgraceSO extends OpstaSO<Void, List<Igrac>> {
 

@@ -8,7 +8,8 @@ import rs.fon.domen.Mesto;
 
 /**
  * Repozitorijum za rad sa tabelom {@code mesto}.
- * * @author Jovan Radojičić
+ *
+ * @author Jovan Radojičić
  */
 public class MestoRepository extends Repository<Mesto> {
 

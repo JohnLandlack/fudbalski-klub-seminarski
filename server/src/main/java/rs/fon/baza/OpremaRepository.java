@@ -8,7 +8,8 @@ import rs.fon.domen.Oprema;
 
 /**
  * Repozitorijum za rad sa tabelom {@code oprema}.
- * * @author Jovan Radojičić
+ *
+ * @author Jovan Radojičić
  */
 public class OpremaRepository extends Repository<Oprema> {
 

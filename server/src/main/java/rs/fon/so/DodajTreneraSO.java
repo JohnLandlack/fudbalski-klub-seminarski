@@ -6,7 +6,8 @@ import rs.fon.domen.Trener;
 
 /**
  * Sistemska operacija za dodavanje novog trenera.
- * * @author Jovan Radojičić
+ *
+ * @author Jovan Radojičić
  */
 public class DodajTreneraSO extends OpstaSO<Trener, Trener> {
 

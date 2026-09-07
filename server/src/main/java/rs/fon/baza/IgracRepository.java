@@ -10,7 +10,8 @@ import rs.fon.domen.Mesto;
 /**
  * Repozitorijum za rad sa tabelom {@code igrac}. Pridružuje tabelu
  * {@code mesto} da bi svaki igrač imao potpuno učitan objekat mesta.
- * * @author Jovan Radojičić
+ *
+ * @author Jovan Radojičić
  */
 public class IgracRepository extends Repository<Igrac> {
 

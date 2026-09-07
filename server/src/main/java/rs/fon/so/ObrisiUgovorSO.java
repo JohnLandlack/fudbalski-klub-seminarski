@@ -7,7 +7,8 @@ import rs.fon.domen.Ugovor;
 /**
  * Sistemska operacija za brisanje ugovora. Stavke ugovora se brišu automatski
  * (ON DELETE CASCADE na nivou baze).
- * * @author Jovan Radojičić
+ *
+ * @author Jovan Radojičić
  */
 public class ObrisiUgovorSO extends OpstaSO<Ugovor, Void> {
 

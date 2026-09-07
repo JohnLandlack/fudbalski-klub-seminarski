@@ -6,7 +6,8 @@ import rs.fon.baza.Konekcija;
  * Generička osnova za sistemske operacije — template method koji garantuje
  * da se svaka operacija izvrši transakciono: provera preduslova, izvršenje,
  * pa commit; na bilo koju grešku, rollback.
- * * @param <T> tip ulaznog objekta operacije
+ *
+ * @param <T> tip ulaznog objekta operacije
  * @param <R> tip rezultata operacije
  * @author Jovan Radojičić
  */

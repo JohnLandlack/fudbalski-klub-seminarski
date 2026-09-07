@@ -8,7 +8,8 @@ import rs.fon.domen.TrenerLicenca;
 
 /**
  * Sistemska operacija za dodelu licence treneru.
- * * @author Jovan Radojičić
+ *
+ * @author Jovan Radojičić
  */
 public class DodeliLicencuTreneruSO extends OpstaSO<TrenerLicenca, TrenerLicenca> {
 

@@ -7,7 +7,8 @@ import rs.fon.domen.Igrac;
 /**
  * Sistemska operacija za brisanje igrača. Baza sprečava brisanje (RESTRICT)
  * ako igrač ima aktivan ugovor.
- * * @author Jovan Radojičić
+ *
+ * @author Jovan Radojičić
  */
 public class ObrisiIgracaSO extends OpstaSO<Igrac, Void> {
 

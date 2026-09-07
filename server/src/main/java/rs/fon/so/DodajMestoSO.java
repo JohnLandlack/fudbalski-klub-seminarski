@@ -6,7 +6,8 @@ import rs.fon.domen.Mesto;
 
 /**
  * Sistemska operacija za dodavanje novog mesta.
- * * @author Jovan Radojičić
+ *
+ * @author Jovan Radojičić
  */
 public class DodajMestoSO extends OpstaSO<Mesto, Mesto> {
 

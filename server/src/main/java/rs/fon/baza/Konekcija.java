@@ -7,7 +7,8 @@ import java.sql.SQLException;
 /**
  * Drži jedinstvenu konekciju ka bazi podataka (transakciona — autocommit
  * isključen), otvorenu prema parametrima iz {@link Konfiguracija}.
- * * @author Jovan Radojičić
+ *
+ * @author Jovan Radojičić
  */
 public class Konekcija {
 

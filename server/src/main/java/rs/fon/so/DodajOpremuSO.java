@@ -6,7 +6,8 @@ import rs.fon.domen.Oprema;
 
 /**
  * Sistemska operacija za dodavanje nove opreme.
- * * @author Jovan Radojičić
+ *
+ * @author Jovan Radojičić
  */
 public class DodajOpremuSO extends OpstaSO<Oprema, Oprema> {
 

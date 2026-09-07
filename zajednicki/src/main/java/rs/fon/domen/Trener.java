@@ -5,7 +5,8 @@ import java.util.Objects;
 
 /**
  * Predstavlja trenera u fudbalskom klubu.
- * * @author Jovan Radojičić
+ *
+ * @author Jovan Radojičić
  */
 public class Trener implements Serializable {
     
@@ -131,7 +132,8 @@ public class Trener implements Serializable {
     
     /**
      * Poredi dva objekta po ID-ju trenera.
-     * * @param obj objekat sa kojim se poredi
+     *
+     * @param obj objekat sa kojim se poredi
      * @return true ako su oba objekta iste klase i imaju isti ID trenera, inace false
      */
 

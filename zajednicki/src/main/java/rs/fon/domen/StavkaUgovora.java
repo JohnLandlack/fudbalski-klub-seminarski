@@ -7,7 +7,8 @@ import java.util.Objects;
 /**
  * Predstavlja stavku ugovora — plata i oprema za jedan period važenja ugovora.
  * Jedinstveno je određena ugovorom kome pripada i rednim brojem u okviru njega.
- * * @author Jovan Radojičić
+ *
+ * @author Jovan Radojičić
  */
 public class StavkaUgovora implements Serializable {
 
@@ -125,7 +126,8 @@ public class StavkaUgovora implements Serializable {
 
     /**
      * Poredi dva objekta po ugovoru i rednom broju stavke.
-     * * @param obj objekat sa kojim se poredi
+     *
+     * @param obj objekat sa kojim se poredi
      * @return true ako su oba objekta iste klase i imaju isti ugovor i redni broj, inace false
      */
 

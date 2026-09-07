@@ -22,7 +22,8 @@ import java.nio.file.Path;
 /**
  * Klasa zaduzena za serijalizaciju i deserijalizaciju igraca u JSON fajl,
  * kao i za povlacenje nasumicnih podataka sa RandomUser Web API-ja.
- * * @author Jovan Radojičić
+ *
+ * @author Jovan Radojičić
  */
 public class IgracJson {
 
