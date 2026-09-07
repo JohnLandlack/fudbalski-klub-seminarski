@@ -54,6 +54,15 @@ public class UgovorRepository extends Repository<Ugovor> {
         }
     }
 
+    /**
+     * Vraća sledeći slobodan ID za novi ugovor (najveći trenutni ID uvećan za 1).
+     * @return sledeći slobodan ID
+     * @throws SQLException ako upit ka bazi ne uspe
+     */
+    public int sledeciId() throws SQLException {
+        return vratiMaxId("ugovor", "idUgovor") + 1;
+    }
+
     @Override
     public void add(Ugovor ugovor) throws SQLException {
         String upit = "INSERT INTO ugovor (idUgovor, datumPotpisivanja, idTrener, idIgrac) VALUES (?, ?, ?, ?)";

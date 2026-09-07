@@ -37,6 +37,15 @@ public class LicencaRepository extends Repository<Licenca> {
         }
     }
 
+    /**
+     * Vraća sledeći slobodan ID za novu licencu (najveći trenutni ID uvećan za 1).
+     * @return sledeći slobodan ID
+     * @throws SQLException ako upit ka bazi ne uspe
+     */
+    public int sledeciId() throws SQLException {
+        return vratiMaxId("licenca", "idLicence") + 1;
+    }
+
     @Override
     public void add(Licenca licenca) throws SQLException {
         String upit = "INSERT INTO licenca (idLicence, tipLicence, nivoLicence) VALUES (?, ?, ?)";

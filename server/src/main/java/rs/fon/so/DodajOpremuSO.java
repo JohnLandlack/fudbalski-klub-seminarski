@@ -15,13 +15,11 @@ public class DodajOpremuSO extends OpstaSO<Oprema, Oprema> {
     @Override
     protected void preduslovi(Oprema oprema) throws Exception {
         Objects.requireNonNull(oprema, "Oprema ne sme biti null");
-        if (repository.getById(oprema.getIdOpreme()) != null) {
-            throw new Exception("Oprema sa ID-jem " + oprema.getIdOpreme() + " već postoji");
-        }
     }
 
     @Override
     protected Oprema izvrsiOperaciju(Oprema oprema) throws Exception {
+        oprema.setIdOpreme(repository.sledeciId());
         repository.add(oprema);
         return oprema;
     }

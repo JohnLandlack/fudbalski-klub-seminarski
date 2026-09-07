@@ -39,7 +39,7 @@ class ObrisiUgovorSOTest extends BazaTestBase {
         ugovor = new Ugovor(1, new Date(), trener, igrac);
         ugovorRepository.add(ugovor);
 
-        Oprema oprema = new Oprema(1, "Domaci", "Letnji");
+        Oprema oprema = new Oprema(1, "Prvi", "Domaći");
         new OpremaRepository().add(oprema);
         stavkaRepository.add(new StavkaUgovora(ugovor, 1, new Date(), 1000, oprema));
     }

@@ -24,7 +24,7 @@ class DodeliLicencuTreneruSOTest extends BazaTestBase {
         trener = new Trener(1, "Marko", "Markovic", "marko123", "sifra123");
         new TrenerRepository().add(trener);
 
-        licenca = new Licenca(1, "Trenerska", "PRO");
+        licenca = new Licenca(1, "Trenerska", "Pro");
         new LicencaRepository().add(licenca);
     }
 

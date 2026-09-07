@@ -17,9 +17,6 @@ public class DodajIgracaSO extends OpstaSO<Igrac, Igrac> {
     @Override
     protected void preduslovi(Igrac igrac) throws Exception {
         Objects.requireNonNull(igrac, "Igrac ne sme biti null");
-        if (repository.getById(igrac.getIdIgrac()) != null) {
-            throw new Exception("Igrac sa ID-jem " + igrac.getIdIgrac() + " već postoji");
-        }
         if (mestoRepository.getById(igrac.getMesto().getIdMesta()) == null) {
             throw new Exception("Mesto sa ID-jem " + igrac.getMesto().getIdMesta() + " ne postoji");
         }
@@ -27,6 +24,7 @@ public class DodajIgracaSO extends OpstaSO<Igrac, Igrac> {
 
     @Override
     protected Igrac izvrsiOperaciju(Igrac igrac) throws Exception {
+        igrac.setIdIgrac(repository.sledeciId());
         repository.add(igrac);
         return igrac;
     }

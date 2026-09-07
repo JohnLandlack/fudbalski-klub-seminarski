@@ -23,9 +23,6 @@ public class DodajUgovorSO extends OpstaSO<Ugovor, Ugovor> {
     @Override
     protected void preduslovi(Ugovor ugovor) throws Exception {
         Objects.requireNonNull(ugovor, "Ugovor ne sme biti null");
-        if (repository.getById(ugovor.getIdUgovor()) != null) {
-            throw new Exception("Ugovor sa ID-jem " + ugovor.getIdUgovor() + " već postoji");
-        }
         if (trenerRepository.getById(ugovor.getTrener().getIdTrener()) == null) {
             throw new Exception("Trener sa ID-jem " + ugovor.getTrener().getIdTrener() + " ne postoji");
         }
@@ -36,6 +33,7 @@ public class DodajUgovorSO extends OpstaSO<Ugovor, Ugovor> {
 
     @Override
     protected Ugovor izvrsiOperaciju(Ugovor ugovor) throws Exception {
+        ugovor.setIdUgovor(repository.sledeciId());
         repository.add(ugovor);
         for (StavkaUgovora stavka : ugovor.getStavke()) {
             stavka.setUgovor(ugovor);

@@ -15,13 +15,11 @@ public class DodajTreneraSO extends OpstaSO<Trener, Trener> {
     @Override
     protected void preduslovi(Trener trener) throws Exception {
         Objects.requireNonNull(trener, "Trener ne sme biti null");
-        if (repository.getById(trener.getIdTrener()) != null) {
-            throw new Exception("Trener sa ID-jem " + trener.getIdTrener() + " već postoji");
-        }
     }
 
     @Override
     protected Trener izvrsiOperaciju(Trener trener) throws Exception {
+        trener.setIdTrener(repository.sledeciId());
         repository.add(trener);
         return trener;
     }

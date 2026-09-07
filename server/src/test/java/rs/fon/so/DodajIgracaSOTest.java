@@ -21,23 +21,14 @@ class DodajIgracaSOTest extends BazaTestBase {
     }
 
     @Test
-    void izvrsiOperaciju_dodajeIgraca() throws Exception {
+    void izvrsiOperaciju_dodajeIgracaIDodeljujeId() throws Exception {
         Igrac igrac = new Igrac(1, "Petar", "Petrovic", "0641234567", "Napadac", mesto);
 
         so.preduslovi(igrac);
         Igrac rezultat = so.izvrsiOperaciju(igrac);
 
-        assertEquals(igrac, rezultat);
+        assertEquals(1, rezultat.getIdIgrac());
         assertEquals(igrac, new IgracRepository().getById(1));
-    }
-
-    @Test
-    void preduslovi_bacaException_akoIdVecPostoji() throws Exception {
-        Igrac igrac = new Igrac(1, "Petar", "Petrovic", "0641234567", "Napadac", mesto);
-        new IgracRepository().add(igrac);
-
-        Igrac duplikat = new Igrac(1, "Stefan", "Stefanovic", "0651234567", "Golman", mesto);
-        assertThrows(Exception.class, () -> so.preduslovi(duplikat));
     }
 
     @Test

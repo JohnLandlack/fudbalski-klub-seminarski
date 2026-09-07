@@ -15,13 +15,11 @@ public class DodajLicencuSO extends OpstaSO<Licenca, Licenca> {
     @Override
     protected void preduslovi(Licenca licenca) throws Exception {
         Objects.requireNonNull(licenca, "Licenca ne sme biti null");
-        if (repository.getById(licenca.getIdLicence()) != null) {
-            throw new Exception("Licenca sa ID-jem " + licenca.getIdLicence() + " već postoji");
-        }
     }
 
     @Override
     protected Licenca izvrsiOperaciju(Licenca licenca) throws Exception {
+        licenca.setIdLicence(repository.sledeciId());
         repository.add(licenca);
         return licenca;
     }

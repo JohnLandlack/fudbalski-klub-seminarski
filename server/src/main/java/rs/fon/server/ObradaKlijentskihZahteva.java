@@ -19,10 +19,20 @@ import rs.fon.so.DodajOpremuSO;
 import rs.fon.so.DodajTreneraSO;
 import rs.fon.so.DodajUgovorSO;
 import rs.fon.so.DodeliLicencuTreneruSO;
+import rs.fon.so.IzmeniIgracaSO;
 import rs.fon.so.IzmeniUgovorSO;
+import rs.fon.so.LoginSO;
 import rs.fon.so.ObrisiIgracaSO;
+import rs.fon.so.ObrisiLicencuSO;
+import rs.fon.so.ObrisiMestoSO;
+import rs.fon.so.ObrisiOpremuSO;
 import rs.fon.so.ObrisiUgovorSO;
 import rs.fon.so.PreuzmiSveIgraceSO;
+import rs.fon.so.UcitajLicenceSO;
+import rs.fon.so.UcitajMestaSO;
+import rs.fon.so.UcitajOpremuSO;
+import rs.fon.so.UcitajTrenereSO;
+import rs.fon.so.UcitajUgovoreSO;
 
 /**
  * Nit koja opslužuje jednog povezanog klijenta: čita {@link KlijentskiZahtev}
@@ -88,6 +98,26 @@ public class ObradaKlijentskihZahteva extends Thread {
                 return new PreuzmiSveIgraceSO().izvrsi(null);
             case OBRISI_IGRACA:
                 return new ObrisiIgracaSO().izvrsi((Igrac) parametar);
+            case UCITAJ_MESTA:
+                return new UcitajMestaSO().izvrsi(null);
+            case UCITAJ_TRENERE:
+                return new UcitajTrenereSO().izvrsi(null);
+            case UCITAJ_OPREMU:
+                return new UcitajOpremuSO().izvrsi(null);
+            case UCITAJ_LICENCE:
+                return new UcitajLicenceSO().izvrsi(null);
+            case UCITAJ_UGOVORE:
+                return new UcitajUgovoreSO().izvrsi(null);
+            case LOGIN:
+                return new LoginSO().izvrsi((Trener) parametar);
+            case IZMENI_IGRACA:
+                return new IzmeniIgracaSO().izvrsi((Igrac) parametar);
+            case OBRISI_MESTO:
+                return new ObrisiMestoSO().izvrsi((Mesto) parametar);
+            case OBRISI_LICENCU:
+                return new ObrisiLicencuSO().izvrsi((Licenca) parametar);
+            case OBRISI_OPREMU:
+                return new ObrisiOpremuSO().izvrsi((Oprema) parametar);
             default:
                 throw new IllegalArgumentException("Nepoznata operacija: " + zahtev.getOperacija());
         }

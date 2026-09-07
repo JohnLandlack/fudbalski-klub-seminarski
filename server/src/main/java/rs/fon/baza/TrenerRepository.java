@@ -37,6 +37,15 @@ public class TrenerRepository extends Repository<Trener> {
         }
     }
 
+    /**
+     * Vraća sledeći slobodan ID za novog trenera (najveći trenutni ID uvećan za 1).
+     * @return sledeći slobodan ID
+     * @throws SQLException ako upit ka bazi ne uspe
+     */
+    public int sledeciId() throws SQLException {
+        return vratiMaxId("trener", "idTrener") + 1;
+    }
+
     @Override
     public void add(Trener trener) throws SQLException {
         String upit = "INSERT INTO trener (idTrener, ime, prezime, korisnickoIme, sifra) VALUES (?, ?, ?, ?, ?)";

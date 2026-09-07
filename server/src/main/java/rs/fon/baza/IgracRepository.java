@@ -44,6 +44,15 @@ public class IgracRepository extends Repository<Igrac> {
         }
     }
 
+    /**
+     * Vraća sledeći slobodan ID za novog igrača (najveći trenutni ID uvećan za 1).
+     * @return sledeći slobodan ID
+     * @throws SQLException ako upit ka bazi ne uspe
+     */
+    public int sledeciId() throws SQLException {
+        return vratiMaxId("igrac", "idIgrac") + 1;
+    }
+
     @Override
     public void add(Igrac igrac) throws SQLException {
         String upit = "INSERT INTO igrac (idIgrac, ime, prezime, telefon, pozicija, idMesta) VALUES (?, ?, ?, ?, ?, ?)";

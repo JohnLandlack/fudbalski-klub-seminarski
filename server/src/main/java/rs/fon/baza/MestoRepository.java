@@ -37,6 +37,15 @@ public class MestoRepository extends Repository<Mesto> {
         }
     }
 
+    /**
+     * Vraća sledeći slobodan ID za novo mesto (najveći trenutni ID uvećan za 1).
+     * @return sledeći slobodan ID
+     * @throws SQLException ako upit ka bazi ne uspe
+     */
+    public int sledeciId() throws SQLException {
+        return vratiMaxId("mesto", "idMesta") + 1;
+    }
+
     @Override
     public void add(Mesto mesto) throws SQLException {
         String upit = "INSERT INTO mesto (idMesta, naziv, postanskiBroj) VALUES (?, ?, ?)";

@@ -37,6 +37,15 @@ public class OpremaRepository extends Repository<Oprema> {
         }
     }
 
+    /**
+     * Vraća sledeći slobodan ID za novu opremu (najveći trenutni ID uvećan za 1).
+     * @return sledeći slobodan ID
+     * @throws SQLException ako upit ka bazi ne uspe
+     */
+    public int sledeciId() throws SQLException {
+        return vratiMaxId("oprema", "idOpreme") + 1;
+    }
+
     @Override
     public void add(Oprema oprema) throws SQLException {
         String upit = "INSERT INTO oprema (idOpreme, tipDresa, vrsteDresa) VALUES (?, ?, ?)";
