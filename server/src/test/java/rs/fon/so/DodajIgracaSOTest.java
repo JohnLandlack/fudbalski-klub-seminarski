@@ -38,4 +38,9 @@ class DodajIgracaSOTest extends BazaTestBase {
 
         assertThrows(Exception.class, () -> so.preduslovi(igrac));
     }
+
+    @Test
+    void preduslovi_bacaException_akoJeIgracNull() {
+        assertThrows(NullPointerException.class, () -> so.preduslovi(null));
+    }
 }

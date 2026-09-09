@@ -1,6 +1,7 @@
 package rs.fon.so;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import org.junit.jupiter.api.Test;
 import rs.fon.baza.MestoRepository;
 import rs.fon.domen.Mesto;
@@ -18,5 +19,10 @@ class DodajMestoSOTest extends BazaTestBase {
 
         assertEquals(1, rezultat.getIdMesta());
         assertEquals(mesto, new MestoRepository().getById(1));
+    }
+
+    @Test
+    void preduslovi_bacaException_akoJeMestoNull() {
+        assertThrows(NullPointerException.class, () -> so.preduslovi(null));
     }
 }

@@ -14,6 +14,13 @@ public class IzmeniIgracaSO extends OpstaSO<Igrac, Igrac> {
     private final IgracRepository repository = new IgracRepository();
     private final MestoRepository mestoRepository = new MestoRepository();
 
+    /**
+     * Proverava da igrač koji se menja nije null, da postoji u bazi i da
+     * mesto na koje se poziva stvarno postoji.
+     * @param igrac igrač sa izmenjenim podacima
+     * @throws NullPointerException ako je igrač null
+     * @throws Exception ako igrač sa datim ID-jem ili njegovo mesto ne postoje u bazi
+     */
     @Override
     protected void preduslovi(Igrac igrac) throws Exception {
         Objects.requireNonNull(igrac, "Igrac ne sme biti null");
@@ -25,6 +32,12 @@ public class IzmeniIgracaSO extends OpstaSO<Igrac, Igrac> {
         }
     }
 
+    /**
+     * Ažurira podatke igrača u bazi.
+     * @param igrac igrač sa izmenjenim podacima
+     * @return izmenjeni igrač
+     * @throws Exception ako ažuriranje ne uspe
+     */
     @Override
     protected Igrac izvrsiOperaciju(Igrac igrac) throws Exception {
         repository.edit(igrac);

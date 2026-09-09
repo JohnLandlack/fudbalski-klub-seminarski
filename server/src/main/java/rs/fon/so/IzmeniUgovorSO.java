@@ -21,6 +21,12 @@ public class IzmeniUgovorSO extends OpstaSO<Ugovor, Ugovor> {
     private final UgovorRepository repository = new UgovorRepository();
     private final StavkaUgovoraRepository stavkaRepository = new StavkaUgovoraRepository();
 
+    /**
+     * Proverava da ugovor koji se menja nije null i da postoji u bazi.
+     * @param ugovor ugovor sa izmenjenim podacima
+     * @throws NullPointerException ako je ugovor null
+     * @throws Exception ako ugovor sa datim ID-jem ne postoji u bazi
+     */
     @Override
     protected void preduslovi(Ugovor ugovor) throws Exception {
         Objects.requireNonNull(ugovor, "Ugovor ne sme biti null");
@@ -29,6 +35,14 @@ public class IzmeniUgovorSO extends OpstaSO<Ugovor, Ugovor> {
         }
     }
 
+    /**
+     * Ažurira osnovne podatke ugovora i sinhronizuje njegove stavke sa bazom:
+     * nove stavke dodaje, izmenjene ažurira, a stavke koje više ne postoje u
+     * ugovoru briše.
+     * @param ugovor ugovor sa izmenjenim podacima i konačnim spiskom stavki
+     * @return izmenjeni ugovor
+     * @throws Exception ako ažuriranje ugovora ili neke od stavki ne uspe
+     */
     @Override
     protected Ugovor izvrsiOperaciju(Ugovor ugovor) throws Exception {
         repository.edit(ugovor);

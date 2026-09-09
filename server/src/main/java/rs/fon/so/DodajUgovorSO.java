@@ -21,6 +21,13 @@ public class DodajUgovorSO extends OpstaSO<Ugovor, Ugovor> {
     private final IgracRepository igracRepository = new IgracRepository();
     private final StavkaUgovoraRepository stavkaRepository = new StavkaUgovoraRepository();
 
+    /**
+     * Proverava da ugovor koji se dodaje nije null i da trener i igrač
+     * navedeni u ugovoru stvarno postoje u bazi.
+     * @param ugovor ugovor koji se dodaje
+     * @throws NullPointerException ako je ugovor null
+     * @throws Exception ako trener ili igrač iz ugovora ne postoje u bazi
+     */
     @Override
     protected void preduslovi(Ugovor ugovor) throws Exception {
         Objects.requireNonNull(ugovor, "Ugovor ne sme biti null");
@@ -32,6 +39,13 @@ public class DodajUgovorSO extends OpstaSO<Ugovor, Ugovor> {
         }
     }
 
+    /**
+     * Dodeljuje ugovoru sledeći slobodan ID, upisuje ga u bazu i upisuje
+     * sve njegove stavke (ako ih ima).
+     * @param ugovor ugovor koji se dodaje (ID koji eventualno ima se ignoriše)
+     * @return ugovor sa dodeljenim ID-jem
+     * @throws Exception ako upis ugovora ili neke od stavki u bazu ne uspe
+     */
     @Override
     protected Ugovor izvrsiOperaciju(Ugovor ugovor) throws Exception {
         ugovor.setIdUgovor(repository.sledeciId());

@@ -49,4 +49,12 @@ class DodajUgovorSOTest extends BazaTestBase {
 
         assertThrows(Exception.class, () -> so.preduslovi(ugovor));
     }
+
+    @Test
+    void preduslovi_bacaException_akoIgracNePostoji() {
+        Igrac nepostojeciIgrac = new Igrac(999, "Nepostojeci", "Igrac", "000", "Rezerva", igrac.getMesto());
+        Ugovor ugovor = new Ugovor(2, new Date(), trener, nepostojeciIgrac);
+
+        assertThrows(Exception.class, () -> so.preduslovi(ugovor));
+    }
 }

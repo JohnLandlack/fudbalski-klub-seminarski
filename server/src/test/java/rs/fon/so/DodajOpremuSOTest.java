@@ -1,6 +1,7 @@
 package rs.fon.so;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import org.junit.jupiter.api.Test;
 import rs.fon.baza.OpremaRepository;
 import rs.fon.domen.Oprema;
@@ -18,5 +19,10 @@ class DodajOpremuSOTest extends BazaTestBase {
 
         assertEquals(1, rezultat.getIdOpreme());
         assertEquals(oprema, new OpremaRepository().getById(1));
+    }
+
+    @Test
+    void preduslovi_bacaException_akoJeOpremaNull() {
+        assertThrows(NullPointerException.class, () -> so.preduslovi(null));
     }
 }

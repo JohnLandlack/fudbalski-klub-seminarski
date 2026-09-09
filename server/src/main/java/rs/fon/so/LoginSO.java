@@ -14,6 +14,12 @@ public class LoginSO extends OpstaSO<Trener, Trener> {
 
     private final TrenerRepository repository = new TrenerRepository();
 
+    /**
+     * Proverava da su prosleđeni podaci za prijavu potpuni (korisničko ime i
+     * šifra nisu null).
+     * @param trener trener sa unetim korisničkim imenom i šifrom
+     * @throws NullPointerException ako je trener, korisničko ime ili šifra null
+     */
     @Override
     protected void preduslovi(Trener trener) throws Exception {
         Objects.requireNonNull(trener, "Trener ne sme biti null");
@@ -21,6 +27,13 @@ public class LoginSO extends OpstaSO<Trener, Trener> {
         Objects.requireNonNull(trener.getSifra(), "Sifra ne sme biti null");
     }
 
+    /**
+     * Traži trenera sa datim korisničkim imenom i proverava da li se
+     * uneta šifra poklapa sa njegovom.
+     * @param trener trener sa unetim korisničkim imenom i šifrom
+     * @return trener iz baze čiji su podaci potvrđeni kao ispravni
+     * @throws Exception ako korisničko ime ne postoji ili je uneta šifra pogrešna
+     */
     @Override
     protected Trener izvrsiOperaciju(Trener trener) throws Exception {
         List<Trener> sviTreneri = repository.getAll();

@@ -1,6 +1,7 @@
 package rs.fon.so;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import org.junit.jupiter.api.Test;
 import rs.fon.baza.LicencaRepository;
 import rs.fon.domen.Licenca;
@@ -18,5 +19,10 @@ class DodajLicencuSOTest extends BazaTestBase {
 
         assertEquals(1, rezultat.getIdLicence());
         assertEquals(licenca, new LicencaRepository().getById(1));
+    }
+
+    @Test
+    void preduslovi_bacaException_akoJeLicencaNull() {
+        assertThrows(NullPointerException.class, () -> so.preduslovi(null));
     }
 }

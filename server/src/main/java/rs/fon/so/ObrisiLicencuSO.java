@@ -13,6 +13,12 @@ public class ObrisiLicencuSO extends OpstaSO<Licenca, Void> {
 
     private final LicencaRepository repository = new LicencaRepository();
 
+    /**
+     * Proverava da licenca koja se briše nije null i da postoji u bazi.
+     * @param licenca licenca koja se briše
+     * @throws NullPointerException ako je licenca null
+     * @throws Exception ako licenca sa datim ID-jem ne postoji u bazi
+     */
     @Override
     protected void preduslovi(Licenca licenca) throws Exception {
         Objects.requireNonNull(licenca, "Licenca ne sme biti null");
@@ -21,6 +27,13 @@ public class ObrisiLicencuSO extends OpstaSO<Licenca, Void> {
         }
     }
 
+    /**
+     * Briše licencu iz baze.
+     * @param licenca licenca koja se briše
+     * @return uvek {@code null}
+     * @throws Exception ako je licenca dodeljena nekom treneru (baza
+     * sprečava brisanje) ili brisanje iz nekog drugog razloga ne uspe
+     */
     @Override
     protected Void izvrsiOperaciju(Licenca licenca) throws Exception {
         repository.delete(licenca);

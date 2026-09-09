@@ -46,4 +46,20 @@ class DodeliLicencuTreneruSOTest extends BazaTestBase {
 
         assertThrows(Exception.class, () -> so.preduslovi(trenerLicenca));
     }
+
+    @Test
+    void preduslovi_bacaException_akoTrenerNePostoji() {
+        Trener nepostojeciTrener = new Trener(999, "Nepostojeci", "Trener", "nema", "nema");
+        TrenerLicenca trenerLicenca = new TrenerLicenca(nepostojeciTrener, licenca, new Date(), new Date(System.currentTimeMillis() + 100000));
+
+        assertThrows(Exception.class, () -> so.preduslovi(trenerLicenca));
+    }
+
+    @Test
+    void preduslovi_bacaException_akoLicencaNePostoji() {
+        Licenca nepostojecaLicenca = new Licenca(999, "Nepostojeca", "Nivo");
+        TrenerLicenca trenerLicenca = new TrenerLicenca(trener, nepostojecaLicenca, new Date(), new Date(System.currentTimeMillis() + 100000));
+
+        assertThrows(Exception.class, () -> so.preduslovi(trenerLicenca));
+    }
 }

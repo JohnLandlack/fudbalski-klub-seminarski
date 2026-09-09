@@ -17,6 +17,14 @@ public class DodeliLicencuTreneruSO extends OpstaSO<TrenerLicenca, TrenerLicenca
     private final TrenerRepository trenerRepository = new TrenerRepository();
     private final LicencaRepository licencaRepository = new LicencaRepository();
 
+    /**
+     * Proverava da dodela nije null, da trener i licenca postoje u bazi i da
+     * trener već ne poseduje tu licencu.
+     * @param trenerLicenca dodela licence treneru koja se pravi
+     * @throws NullPointerException ako je dodela null
+     * @throws Exception ako trener ili licenca ne postoje u bazi, ili ako
+     * trener već poseduje datu licencu
+     */
     @Override
     protected void preduslovi(TrenerLicenca trenerLicenca) throws Exception {
         Objects.requireNonNull(trenerLicenca, "TrenerLicenca ne sme biti null");
@@ -33,6 +41,12 @@ public class DodeliLicencuTreneruSO extends OpstaSO<TrenerLicenca, TrenerLicenca
         }
     }
 
+    /**
+     * Upisuje dodelu licence treneru u bazu.
+     * @param trenerLicenca dodela licence treneru koja se upisuje
+     * @return upisana dodela
+     * @throws Exception ako upis u bazu ne uspe
+     */
     @Override
     protected TrenerLicenca izvrsiOperaciju(TrenerLicenca trenerLicenca) throws Exception {
         repository.add(trenerLicenca);
